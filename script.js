@@ -44,13 +44,13 @@ const perguntas = [
             }        
         ]
     },
- ];
+];
 let atual = 0;
 let perguntaAtual;
 let historiaFinal = "";
 
 function mostraPergunta(){
-    if (atual >= perguntas.length) {
+    if(atual >= perguntas.length){
         mostraResultado();
         return;
     }
@@ -71,10 +71,9 @@ function mostraAlternativas(){
 }
 
 function respostaSelecionada(opcaoSelecionada) {
-    const afirmacao = opcaoSelecionada.afirmacoes;
+    const afirmacao = opcaoSelecionada.afirmacao;
     historiaFinal += afirmacao + " ";
     atual++;
-
     mostraPergunta();
 }
 
@@ -83,4 +82,5 @@ function mostraResultado() {
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
 }
+
 mostraPergunta();
